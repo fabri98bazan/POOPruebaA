@@ -15,9 +15,12 @@ public class Utilidades {
     
     // Método para leer el archivo de títulos profesionales
     public static Titulo leerTituloProfesional(String ruta) {
+    	//En esta parte se obtiene una ruta absoluta con el nombre de usario
     	   String rutaAbsoluta=System.getProperty("user.home") + "\\Desktop\\" + ruta;
         try (BufferedReader br = new BufferedReader(new FileReader(rutaAbsoluta))) {
+        	//Lee la linea del archivo de texto para almacenarlo en unna variable
             double adicional =(double) Double.parseDouble(br.readLine());
+            //Crea el objeto titulo
             return new Titulo("Ingeniero", adicional);
         } catch (IOException e) {
             System.err.println("Error al leer el archivo de títulos profesionales: " + e.getMessage());
